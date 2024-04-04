@@ -10,7 +10,7 @@ class ProdutoController extends Controller
     public function index () {
         $produtos = Produto::all();
         
-        $produtosComImagem = $produtos->map(function ($produto) {
+        $produtosComImagem = $produtos->map(function ($produto){
             return [
                 'nome' => $produto->nome,
                 'preco' =>$produto->preco,
