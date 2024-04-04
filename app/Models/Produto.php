@@ -9,7 +9,7 @@ class Produto extends Model
 {
     use HasFactory;
 
-    protected $fillaebçe = [
+    protected $fillable = [
         'nome',
         'preco',
         'ingredientes',
