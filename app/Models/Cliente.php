@@ -14,6 +14,7 @@ class Cliente extends Model
         'telefone',
         'endereco',
         'email',
+         'cpf',
         'password'
     ];
 

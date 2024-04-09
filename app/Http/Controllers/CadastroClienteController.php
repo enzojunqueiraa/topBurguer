@@ -18,6 +18,7 @@ class CadastroClienteController extends Controller
                 'telefone' =>$cliente->telefone,
                 'endereco' => $cliente->endereco,
                 'email'=> $cliente->email,
+                'cpf'=> $cliente->cpf,
                 'password'=> Hash::make($cliente->password)
                 
             ];
