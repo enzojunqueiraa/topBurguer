@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
-    public function index () {
+    public function index() {
         $produtos = Produto::all();
         
         $produtosComImagem = $produtos->map(function ($produto){
@@ -18,6 +18,7 @@ class ProdutoController extends Controller
                 'imagem' => asset('storage/' . $produto->imagem),
             ];
         });
+
 
         return response()->json($produtosComImagem);
     }    
@@ -32,5 +33,15 @@ class ProdutoController extends Controller
         }
         $produto = Produto::create($produtoData);
         return response ()->json (['produto' => $produto], 201);
+    }
+
+    public function retornarTodos()
+    {
+        $produto = Produto::all();
+        return response()->json([
+            'status' => true,
+            'data' => $produto ,
+            'message' => "Pesquisa encontrada com sucesso"
+        ]);
     }
 }

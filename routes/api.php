@@ -9,6 +9,9 @@ Route::get('/produtos',[ProdutoController::class,'index']);
 
 Route::post('/produtos',[ProdutoController::class,'store']);
 
+Route::get('/produtos/all', [ProdutoController::class,'index']);
+
 Route::get('/clientes',[CadastroClienteController::class,'index']);
 
 Route::post('/clientes',[CadastroClienteController::class,'store']);
+
