@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdicionarCarrinhoFormRequest;
+use App\Models\Carrinho;
 use App\Models\Produto;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
@@ -35,13 +39,20 @@ class ProdutoController extends Controller
         return response ()->json (['produto' => $produto], 201);
     }
 
-    public function retornarTodos()
-    {
-        $produto = Produto::all();
-        return response()->json([
-            'status' => true,
-            'data' => $produto ,
-            'message' => "Pesquisa encontrada com sucesso"
-        ]);
-    }
+
+    /*public function adicionarCarrinho(AdicionarCarrinhoFormRequest $request)
+{
+    $carrinho = Carrinho::updateOrCreate(
+        ['produto_id' => $request->produto_id],
+        ['quantidade' => DB::raw('quantidade + ' . $request->quantidade)]
+    );
+
+    return response()->json([
+        'message' => 'Item adicionado ao carrinho com sucesso',
+        'carrinho' => $carrinho,
+    ], 201);
+}*/
+
+
 }
+

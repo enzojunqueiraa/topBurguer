@@ -15,3 +15,4 @@ Route::get('/clientes',[CadastroClienteController::class,'index']);
 
 Route::post('/clientes',[CadastroClienteController::class,'store']);
 
+Route::post('/carrinho/adicionar',[ProdutoController::class, 'adicionar']);
